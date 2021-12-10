@@ -15,6 +15,8 @@ int main(void) {
 	int v = 0;
 
 	int t = 0;
+
+	int p = 0;
 	printf("Enter the size of your matrix: ");
 	scanf("%d", &N);
 
@@ -62,9 +64,20 @@ int main(void) {
 			}
 
 		}
-		if (v < (N / 2))
-			t++;
+		int p = N / 2;
+		p = p * 2;
+		if (p == N)
+		{
+			if (v < (N / 2))
+				t++;
 			v = 0;
+		}
+		else
+		{
+			if (v <= (N / 2))
+				t++;
+			v = 0;
+		}
 	}
 	if (t > 0)
 		printf("not Hamiltonian\n");
